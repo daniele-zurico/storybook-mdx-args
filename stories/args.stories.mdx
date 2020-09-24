@@ -1,0 +1,17 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+
+<Meta title="Example/MDX-Args-issue" />
+
+Mdx args
+=========
+Writing an MDX story and supplying args causes the ""
+
+<Canvas>
+  <Story 
+    name="issue"
+    decorators={[(Story, { args }) => (<div>{args.message}{Story()}</div>)]} 
+    args={{message: "Hello World"}} 
+    argTypes={{message: { control: "text" }}}>
+    <h1>Hello</h1>
+  </Story>
+</Canvas>
